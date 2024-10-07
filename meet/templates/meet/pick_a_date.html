@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have to confess, I'm not gay</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <img src="{% static 'images/sticker@2x.png' %}" alt="date?" class="header-img" />
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class ='btn btn-yes' type="submit" value="Submit">
+    </form>
+</body>
+</html>
