@@ -78,14 +78,13 @@ WSGI_APPLICATION = 'date.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
- 
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('postgresql://date:674vSzbOJIvuc6xHFxvZanh2ilyNt4vw@dpg-cs20teu8ii6s73da7evg-a.oregon-postgres.render.com/date_pqvy')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-
+DATABASES['default']=dj_database_url.parse('postgresql://date:674vSzbOJIvuc6xHFxvZanh2ilyNt4vw@dpg-cs20teu8ii6s73da7evg-a.oregon-postgres.render.com/date_pqvy')
 
 
 # Password validation
